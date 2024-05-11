@@ -12,14 +12,14 @@ const Form = () => {
 
     console.log(activity)
 
-    const handleChange = (e: ChangeEvent<HTMLInputElement |   HTMLSelectElement>) => {
+    const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
 
         const isNumberField = ['category', 'calories'].includes(e.target.name)
 
         setActivity({
             ...activity,
             [e.target.name]: isNumberField ? +e.target.value : e.target.value
-        })
+        });
     }
 
     const isValidActivity = (): boolean => {
@@ -49,7 +49,7 @@ const Form = () => {
                     value={activity.category}
                     onChange={handleChange}
                 >
-                    
+
                     {
                         categories.map(category => (
                             <option
